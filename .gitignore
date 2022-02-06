@@ -1,0 +1,12 @@
+runs/
+scripts/
+configs/*
+!configs/sample_config.yaml
+
+# Byte-compiled / optimized / DLL files
+**__pycache__/
+*.py[cod]
+*$py.class
+
+# pycharm
+.idea/

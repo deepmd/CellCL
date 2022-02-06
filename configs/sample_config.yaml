@@ -1,0 +1,40 @@
+run_dir: 'runs/trial_1'
+#resume: 'runs/trial_0/checkpoints/ckpt_epoch_10.pth'
+print_freq: 5
+eval_freq: 1
+save_freq: 1
+epochs: 50
+batch_size: 256
+augmentation: 'weak/strong'
+seed: 0
+
+isd:
+  base_model: 'resnet50'
+  projection: True
+  K: 128000
+  T_t: 0.01
+  T_s: 0.1
+  m: 0.99
+
+optim:
+  sgd:
+    lr: 0.05
+    weight_decay: 0.0001
+    momentum: 0.9
+  scheduler: 'cos'
+
+dataset:
+  path: '../../datasets/single-cell-sample-validation-full-dmso/sc-metadata.csv'
+  root_dir: '../../datasets/single-cell-sample-validation-full-dmso/'
+  input_shape: (96,96,3)
+  num_workers: 4
+  preload: True
+
+eval_dataset:
+  path: '../../datasets/single-cell-sample-validation-full-dmso/sc-metadata.csv'
+  root_dir: '../../datasets/single-cell-sample-validation-full-dmso/'
+  input_shape: (96,96,3)
+  num_workers: 0
+  valid_size: 0.1
+  sampler: 'random'
+  preload: True

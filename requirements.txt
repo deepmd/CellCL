@@ -1,0 +1,10 @@
+pyyaml
+pandas
+sklearn
+scipy
+scikit-image
+matplotlib
+seaborn
+tqdm
+albumentations
+tensorboard
